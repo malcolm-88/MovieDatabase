@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Database</title>
+    <style>
+        table {
+        border: 5px solid #8ebf42;
+        text-align: center;
+         /* margin: auto; */
+        margin-bottom: 20px;
+      }
+      th {
+        border: 2px solid #095484;
+      }
+      td {
+        border: 2px groove #1c87c9;
+      }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+<H1>Movie Database Result!</H1>
+<div>
+
+        <% if (data["Response"] == "False") { %>
+            <p>You need to learn to bloody spell!!!</p>
+        <% } else {%> 
+        <table>
+        <% data["Search"].forEach(function(movie) {%>
+                <tr> 
+                    <td><strong><%= movie["Title"] %></strong></td> 
+                    <td><%= movie["Year"] %></td> 
+                    <td><img style="width: 100px;" src="<%= movie["Poster"] %>" alt=""></td>   
+                </tr>
+            <%}) }%> 
+    </table>
+</div>
+
+<form action="/">
+<button>Search Again!</button></form>
